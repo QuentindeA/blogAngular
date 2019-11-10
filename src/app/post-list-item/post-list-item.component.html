@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger': loveIts < 0}">
+  <h2 [ngStyle]="{color: getColor()}">{{ title }}</h2>
+  <p>{{ created_at | date : 'short' | uppercase }}</p>
+  <p>{{ content }}</p>
+  <div class="btn-toolbar" role="toolbar" aria-label="likeAndDontLike">
+    <div class="btn-group" role="group" aria-label="like">
+      <button type="button"
+              class="btn btn-success"
+              (click)="addLike()">Like it!</button>
+    </div>
+    <div class="btn-group" role="group" aria-label="dontLike">
+      <button type="button"
+              class="btn btn-danger"
+              (click)="subLike()">Don't like it!</button>
+    </div>
+  </div>
+</li>
